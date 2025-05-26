@@ -4,6 +4,7 @@ import authUserReducer from "./authUser/reducer";
 import threadsReducer from "./threads/reducer";
 import threadDetailReducer from "./threadDetail/reducer";
 import { loadingBarReducer } from "react-redux-loading-bar";
+import commentsReducer from "./comments/reducer";
 
 const store = configureStore({
     reducer: {

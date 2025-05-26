@@ -141,19 +141,20 @@ const api = (() => {
     const {
       data: { detailThread },
     } = responseJson;
-    
+
     return detailThread;
   }
 
-  async function createThread({ text, replyTo = '' }) {
+  async function createThread({ title, body, category = '' }) {
     const response = await _fetchWithAuth(`${BASE_URL}/threads`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        text,
-        replyTo,
+        title,
+        body,
+        category,
       }),
     });
 
@@ -170,6 +171,32 @@ const api = (() => {
     } = responseJson;
 
     return thread;
+  }
+
+  async function createComment({ threadId, content }) {
+    const response = await _fetchWithAuth(`${BASE_URL}/threads/${threadId}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        content,
+      }),
+    });
+
+    const responseJson = await response.json();
+
+    const { status, message } = responseJson;
+
+    if (status !== 'success') {
+      throw new Error(message);
+    }
+
+    const {
+      data: { comment },
+    } = responseJson;
+
+    return comment;
   }
 
   async function toggleLikeThread(id) {
@@ -203,6 +230,7 @@ const api = (() => {
     createThread,
     toggleLikeThread,
     getThreadDetail,
+    createComment
   };
 })();
 

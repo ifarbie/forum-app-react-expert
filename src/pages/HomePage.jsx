@@ -16,14 +16,22 @@ const HomePage = () => {
     ...thread,
     user: users.find((user) => user.id === thread.ownerId),
     isUpvoted: authUser ? thread.upVotesBy.includes(authUser.id) : false,
-  }))
+  }));
 
   return (
-    <div className='max-w-[724px] mx-auto mt-12'>
-      <h2 className='text-center font-medium text-3xl mb-6'>Thread Tersedia</h2>
+    <>
+      {authUser ? (
+        <a href='/new' className='fixed size-12 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer bottom-10 right-10 text-white text-xl'>
+          <i class='fa-solid fa-plus'></i>
+        </a>
+      ) : null}
 
-      <ThreadList threads={threadLists} />
-    </div>
+      <div className='max-w-[724px] mx-auto mt-12'>
+        <h2 className='text-center font-medium text-3xl mb-6'>Thread Tersedia</h2>
+
+        <ThreadList threads={threadLists} />
+      </div>
+    </>
   );
 };
 

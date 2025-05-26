@@ -1,10 +1,20 @@
 import React from 'react';
 import useInput from '../hooks/useInput';
+import { useNavigate } from 'react-router-dom';
 
 const AddThreadInput = ({ addThread }) => {
   const [title, onTitleChange] = useInput('');
   const [category, onCategoryChange] = useInput('');
-  const [content, onContentChange] = useInput('');
+  const [body, onBodyChange] = useInput('');
+
+  const navigate = useNavigate();
+
+  const onAddThread = (e) => {
+    e.preventDefault();
+    addThread({ title, body, category });
+
+    navigate('/');
+  }
 
   return (
     <form>
@@ -19,16 +29,16 @@ const AddThreadInput = ({ addThread }) => {
       <div className='mb-4'>
         <textarea
           type='textarea'
-          onChange={onContentChange}
-          value={content}
-          placeholder='Content'
-          name='content'
-          id='content'
+          onChange={onBodyChange}
+          value={body}
+          placeholder='Body'
+          name='body'
+          id='body'
           className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300'
         />
       </div>
 
-      <button onClick={addThread} className='w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white rounded p-2 text-lg font-semibold'>
+      <button onClick={onAddThread} className='w-full cursor-pointer bg-blue-500 hover:bg-blue-600 text-white rounded p-2 text-lg font-semibold'>
         Buat
       </button>
     </form>

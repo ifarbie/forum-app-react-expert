@@ -11,7 +11,7 @@ import Loading from './components/Loading';
 import NewThreadPage from './pages/NewThreadPage';
 
 function App() {
-  const { isPreload = false } = useSelector((states) => states);
+  const { isPreload = false, authUser = null } = useSelector((states) => states);
 
   const dispatch = useDispatch();
 
@@ -34,7 +34,8 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
-          <Route path='/new' element={<NewThreadPage />} />
+          {authUser ? <Route path='/new' element={<NewThreadPage />} /> : null}
+
           <Route path='/threads/:id' element={<DetailPage />} />
         </Routes>
       </main>
