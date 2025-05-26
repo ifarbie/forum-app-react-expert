@@ -31,7 +31,7 @@ const DetailPage = () => {
 
   return (
     <div className='max-w-[724px] mx-auto mt-12 space-y-4 pb-20'>
-      <div className='flex'> 
+      <div className='flex'>
         <div className='border rounded px-2 py-1 text-xs text-gray-600'>#{threadDetail.category}</div>
       </div>
       <h2 className=' font-medium text-3xl'>{threadDetail.title}</h2>
