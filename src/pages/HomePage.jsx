@@ -18,11 +18,12 @@ const HomePage = () => {
     isUpvoted: authUser ? thread.upVotesBy.includes(authUser.id) : false,
   }));
 
+  console.log(threadLists);
   return (
     <>
       {authUser ? (
         <a href='/new' className='fixed size-12 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer bottom-10 right-10 text-white text-xl'>
-          <i class='fa-solid fa-plus'></i>
+          <i className='fa-solid fa-plus'></i>
         </a>
       ) : null}
 

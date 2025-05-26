@@ -4,10 +4,12 @@ import { asyncUnsetAuthUser } from '../states/authUser/action';
 
 const Navbar = () => {
   const { authUser = null } = useSelector((states) => states);
+
   const dispatch = useDispatch();
+
   const onLogout = () => {
     dispatch(asyncUnsetAuthUser());
-  }
+  };
 
   return (
     <div className='bg-gray-800 text-white px-9 py-6'>
@@ -20,7 +22,9 @@ const Navbar = () => {
             </li>
             {authUser ? (
               <li>
-                <a href='/' onClick={onLogout}>Logout</a>
+                <a href='/' onClick={onLogout}>
+                  Logout
+                </a>
               </li>
             ) : (
               <>

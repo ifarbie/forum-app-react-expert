@@ -2,12 +2,9 @@ import React from 'react';
 import AddThreadInput from '../components/AddThreadInput';
 import { useDispatch } from 'react-redux';
 import { asyncAddThread } from '../states/threads/action';
-import { useNavigate } from 'react-router-dom';
 
 const NewThreadPage = () => {
   const dispatch = useDispatch();
-
-  const navigate = useNavigate();
 
   const onAddThread = ({ title, body, category = '' }) => {
     dispatch(asyncAddThread({ title, body, category }));

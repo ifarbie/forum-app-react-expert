@@ -19,11 +19,11 @@ const AddThreadInput = ({ addThread }) => {
   return (
     <form>
       <div className='mb-4'>
-        <input type='text' onChange={onTitleChange} value={title} placeholder='Title' name='title' id='title' className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300' />
+        <input type='text' onChange={onTitleChange} value={title} placeholder='Judul' name='title' id='title' className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300' />
       </div>
 
       <div className='mb-4'>
-        <input type='text' onChange={onCategoryChange} value={category} placeholder='Category' name='category' id='category' className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300' />
+        <input type='text' onChange={onCategoryChange} value={category} placeholder='Kategori' name='category' id='category' className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300' />
       </div>
 
       <div className='mb-4'>
@@ -31,7 +31,6 @@ const AddThreadInput = ({ addThread }) => {
           type='textarea'
           onChange={onBodyChange}
           value={body}
-          placeholder='Body'
           name='body'
           id='body'
           className='w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring focus:border-blue-300'
