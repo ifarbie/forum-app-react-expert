@@ -25,7 +25,7 @@ const ThreadItem = ({ thread }) => {
           {thread.downVotesBy.length}
         </div>
         <div className='flex items-center gap-1'>
-          <i class='fa-regular fa-comment'></i>
+          <i className='fa-regular fa-comment'></i>
           {thread.totalComments}
         </div>
         <div>{formatDateDistance(thread.createdAt)}</div>

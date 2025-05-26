@@ -18,7 +18,6 @@ const HomePage = () => {
     isUpvoted: authUser ? thread.upVotesBy.includes(authUser.id) : false,
   }));
 
-  console.log(threadLists);
   return (
     <>
       {authUser ? (

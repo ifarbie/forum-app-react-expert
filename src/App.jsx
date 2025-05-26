@@ -35,7 +35,6 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           {authUser ? <Route path='/new' element={<NewThreadPage />} /> : null}
-
           <Route path='/threads/:id' element={<DetailPage />} />
         </Routes>
       </main>
