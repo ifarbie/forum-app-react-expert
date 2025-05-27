@@ -10,7 +10,7 @@ const AddThreadInput = ({ addThread }) => {
     e.preventDefault();
     addThread({ title, body, category });
 
-    window.location.href = '/'
+    window.location.href = '/';
   };
 
   return (

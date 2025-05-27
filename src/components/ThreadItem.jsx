@@ -4,7 +4,7 @@ import { formatDateDistance, getTextOnly } from '../utils';
 const ThreadItem = ({ thread }) => {
   return (
     <div className='py-4 border-b border-gray-500 space-y-2'>
-      <div className='flex'> 
+      <div className='flex'>
         <div className='border rounded px-2 py-1 text-xs text-gray-600'>#{thread.category}</div>
       </div>
       <div>

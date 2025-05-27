@@ -85,13 +85,4 @@ function asyncAddComment({ threadId, content }) {
   };
 }
 
-export {
-    ActionType,
-    receiveThreadDetailActionCreator,
-    clearThreadDetailActionCreator,
-    toggleLikeThreadDetailActionCreator,
-    asyncReceiveThreadDetail,
-    asyncToogleLikeThreadDetail,
-    addCommentActionCreator,
-    asyncAddComment,
-  };
+export { ActionType, receiveThreadDetailActionCreator, clearThreadDetailActionCreator, toggleLikeThreadDetailActionCreator, asyncReceiveThreadDetail, asyncToogleLikeThreadDetail, addCommentActionCreator, asyncAddComment };
