@@ -10,8 +10,6 @@ const LoginPage = () => {
 
   const onLogin = ({ email, password }) => {
     dispatch(asyncSetAuthUser({ email, password }));
-
-    navigate('/');
   };
 
   return (

@@ -23,9 +23,7 @@ const Navbar = () => {
             {authUser ? (
               <li className='flex items-center gap-2'>
                 <img className='size-6 rounded-full' src={authUser.avatar} alt='' />
-                <a href='/' onClick={onLogout}>
-                  Logout
-                </a>
+                <button onClick={onLogout}>Logout</button>
               </li>
             ) : (
               <>

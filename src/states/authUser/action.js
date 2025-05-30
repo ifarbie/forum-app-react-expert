@@ -37,6 +37,8 @@ function asyncSetAuthUser({ email, password }) {
       const authUser = await api.getOwnProfile();
 
       dispatch(setAuthUserActionCreator(authUser));
+
+      window.location.href = '/';
     } catch (error) {
       alert(error.message);
     }
@@ -53,6 +55,8 @@ function asyncUnsetAuthUser() {
     api.putAccessToken('');
 
     dispatch(hideLoading());
+
+    window.location.href = '/login';
   };
 }
 

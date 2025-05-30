@@ -3,8 +3,10 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import daStyle from 'eslint-config-dicodingacademy';
+import pluginCypress from 'eslint-plugin-cypress/flat';
 
 export default [
+  pluginCypress.configs.recommended,
   daStyle,
   { ignores: ['dist'] },
   {
