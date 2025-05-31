@@ -2,6 +2,14 @@ import React, { useEffect } from 'react';
 import ThreadList from '../components/ThreadList';
 import { useDispatch, useSelector } from 'react-redux';
 import { asyncPopulateUsersAndThreads } from '../states/shared/action';
+import styled from 'styled-components';
+import PageHeaderTitle from '../components/PageHeaderTitle';
+import PageWrapper from '../components/PageWrapper';
+
+const StyledAddThreadButton = styled.a.attrs({
+  href: '/new',
+  className: 'fixed size-12 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer bottom-10 right-10 text-white text-xl',
+})``;
 
 const HomePage = () => {
   const { threads = [], users = [], authUser = null } = useSelector((states) => states);
@@ -21,16 +29,15 @@ const HomePage = () => {
   return (
     <>
       {authUser ? (
-        <a href='/new' className='fixed size-12 bg-gray-800 rounded-full flex justify-center items-center cursor-pointer bottom-10 right-10 text-white text-xl'>
+        <StyledAddThreadButton>
           <i className='fa-solid fa-plus'></i>
-        </a>
+        </StyledAddThreadButton>
       ) : null}
 
-      <div className='max-w-[724px] mx-auto mt-12'>
-        <h2 className='text-center font-medium text-3xl mb-6'>Thread Tersedia</h2>
-
+      <PageWrapper>
+        <PageHeaderTitle>Thread Tersedia</PageHeaderTitle>
         <ThreadList threads={threadLists} />
-      </div>
+      </PageWrapper>
     </>
   );
 };

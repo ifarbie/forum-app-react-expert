@@ -2,6 +2,8 @@ import React from 'react';
 import AddThreadInput from '../components/AddThreadInput';
 import { useDispatch } from 'react-redux';
 import { asyncAddThread } from '../states/threads/action';
+import PageHeaderTitle from '../components/PageHeaderTitle';
+import PageWrapper from '../components/PageWrapper';
 
 const NewThreadPage = () => {
   const dispatch = useDispatch();
@@ -11,11 +13,11 @@ const NewThreadPage = () => {
   };
 
   return (
-    <div className='max-w-[724px] mx-auto mt-12'>
-      <h2 className='text-center font-medium text-3xl mb-6'>Buat Thread Baru</h2>
+    <PageWrapper>
+      <PageHeaderTitle>Buat Thread Baru</PageHeaderTitle>
 
       <AddThreadInput addThread={onAddThread} />
-    </div>
+    </PageWrapper>
   );
 };
 
